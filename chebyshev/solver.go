@@ -100,10 +100,13 @@ func (s *Solver) SolveWithOrdering(ord Ordering) (Result, error) {
 }
 
 // tau computes the Chebyshev iteration parameter for step k out of n total.
-// tau_k = 2 / (lmin + lmax - (lmax - lmin) * cos(pi*(2k-1)/(2n)))
+// The parameters are reciprocals of the roots of the degree-n Chebyshev polynomial
+// shifted to [lambdaMin, lambdaMax]:
+//
+//	tau_k = 2 / (lmin + lmax + (lmax - lmin) * cos(pi*(2k-1)/(2n)))
 func tau(k, n int, lambdaMin, lambdaMax float64) float64 {
 	cosArg := math.Pi * (2*float64(k) - 1) / (2 * float64(n))
-	return 2.0 / (lambdaMin + lambdaMax - (lambdaMax-lambdaMin)*math.Cos(cosArg))
+	return 2.0 / (lambdaMin + lambdaMax + (lambdaMax-lambdaMin)*math.Cos(cosArg))
 }
 
 // orderingSequence returns the parameter indices for the given ordering.

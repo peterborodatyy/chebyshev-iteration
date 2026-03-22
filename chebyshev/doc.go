@@ -10,7 +10,7 @@
 //
 //	x_{k+1} = x_k + tau_k * (b - A * x_k)
 //
-// where tau_k = 2 / (lmin + lmax - (lmax - lmin) * cos(pi*(2k-1)/(2n)))
+// where tau_k = 2 / (lmin + lmax + (lmax - lmin) * cos(pi*(2k-1)/(2n)))
 // and n is the total number of iterations (the Chebyshev polynomial degree).
 //
 // # Usage

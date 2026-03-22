@@ -146,7 +146,7 @@ x_{k+1} = x_k + tau_k * (b - A * x_k)
 where the relaxation parameters tau_k are chosen as:
 
 ```
-tau_k = 2 / (lambda_min + lambda_max - (lambda_max - lambda_min) * cos(pi * (2k - 1) / (2n)))
+tau_k = 2 / (lambda_min + lambda_max + (lambda_max - lambda_min) * cos(pi * (2k - 1) / (2n)))
 ```
 
 Here **n** is the polynomial degree (equal to `MaxIter`) and **k** ranges from 1 to n. These parameters are the reciprocals of the roots of the degree-n Chebyshev polynomial shifted to the interval [lambda_min, lambda_max].

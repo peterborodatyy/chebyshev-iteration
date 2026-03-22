@@ -126,6 +126,33 @@ func TestSolveDiagonal(t *testing.T) {
 	}
 }
 
+func TestSolveOriginalExample(t *testing.T) {
+	// Regression test: original matrix_2_2 example from the old codebase.
+	// A = [[1,0,1],[0,2,0],[1,0,3]], b = [2,1,1]
+	// Eigenvalues: 2-sqrt(2), 2, 2+sqrt(2). Exact solution: x = [2.5, 0.5, -0.5]
+	s := Solver{
+		A:         [][]float64{{1, 0, 1}, {0, 2, 0}, {1, 0, 3}},
+		B:         []float64{2, 1, 1},
+		LambdaMin: 2 - math.Sqrt(2),
+		LambdaMax: 2 + math.Sqrt(2),
+		MaxIter:   512,
+		Tolerance: 1e-3,
+	}
+	result, err := s.Solve()
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !result.Converged {
+		t.Errorf("expected convergence, residual=%v iter=%d", result.Residual, result.Iterations)
+	}
+	want := []float64{2.5, 0.5, -0.5}
+	for i, v := range result.X {
+		if math.Abs(v-want[i]) > 1e-2 {
+			t.Errorf("x[%d] = %v, want %v", i, v, want[i])
+		}
+	}
+}
+
 func TestSolve3x3SPD(t *testing.T) {
 	// A = [[4,1,0],[1,3,1],[0,1,2]], b = [5,5,3]
 	// Exact solution: x = [1,1,1]
