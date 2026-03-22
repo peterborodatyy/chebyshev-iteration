@@ -2,9 +2,8 @@ name: Tests
 
 on:
   push:
-    branches: [master, modernize-library]
-  pull_request:
     branches: [master]
+  pull_request:
 
 jobs:
   test:
