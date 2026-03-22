@@ -1,0 +1,30 @@
+name: Tests
+
+on:
+  push:
+    branches: [master, modernize-library]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go-version: ['1.21', '1.22', '1.23']
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go-version }}
+
+      - name: Run tests
+        run: go test -race -coverprofile=coverage.out -covermode=atomic ./...
+
+      - name: Run vet
+        run: go vet ./...
+
+      - name: Run benchmarks
+        run: go test ./chebyshev/ -bench=. -benchmem -count=1

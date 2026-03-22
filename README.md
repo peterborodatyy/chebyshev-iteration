@@ -1,6 +1,8 @@
 # Chebyshev Iteration
 
+[![Tests](https://github.com/peterborodatyy/chebyshev-iteration/actions/workflows/test.yml/badge.svg)](https://github.com/peterborodatyy/chebyshev-iteration/actions/workflows/test.yml)
 [![Go Reference](https://pkg.go.dev/badge/github.com/peterborodatyy/chebyshev-iteration/chebyshev.svg)](https://pkg.go.dev/github.com/peterborodatyy/chebyshev-iteration/chebyshev)
+[![Go Report Card](https://goreportcard.com/badge/github.com/peterborodatyy/chebyshev-iteration)](https://goreportcard.com/report/github.com/peterborodatyy/chebyshev-iteration)
 
 A Go library implementing the [Chebyshev iterative method](https://en.wikipedia.org/wiki/Chebyshev_iteration) for solving systems of linear equations **Ax = b**, where **A** is a symmetric positive-definite (SPD) matrix. The method uses optimal relaxation parameters derived from Chebyshev polynomial roots to accelerate convergence, requiring only estimates of the extreme eigenvalues of **A**.
 
