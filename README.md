@@ -3,6 +3,8 @@
 [![Tests](https://github.com/peterborodatyy/chebyshev-iteration/actions/workflows/test.yml/badge.svg)](https://github.com/peterborodatyy/chebyshev-iteration/actions/workflows/test.yml)
 [![Go Reference](https://pkg.go.dev/badge/github.com/peterborodatyy/chebyshev-iteration/chebyshev.svg)](https://pkg.go.dev/github.com/peterborodatyy/chebyshev-iteration/chebyshev)
 [![Go Report Card](https://goreportcard.com/badge/github.com/peterborodatyy/chebyshev-iteration)](https://goreportcard.com/report/github.com/peterborodatyy/chebyshev-iteration)
+[![Share on X](https://img.shields.io/badge/share-on%20X-black?logo=x)](https://twitter.com/intent/tweet?text=Chebyshev%20Iteration%20%E2%80%93%20a%20zero-dependency%20Go%20library%20for%20solving%20linear%20systems%20Ax%3Db&url=https%3A%2F%2Fgithub.com%2Fpeterborodatyy%2Fchebyshev-iteration)
+[![Share on Reddit](https://img.shields.io/badge/share-on%20Reddit-orange?logo=reddit&logoColor=white)](https://www.reddit.com/submit?url=https%3A%2F%2Fgithub.com%2Fpeterborodatyy%2Fchebyshev-iteration&title=Chebyshev%20Iteration%20%E2%80%93%20zero-dependency%20Go%20library%20for%20solving%20linear%20systems)
 
 A Go library implementing the [Chebyshev iterative method](https://en.wikipedia.org/wiki/Chebyshev_iteration) for solving systems of linear equations **Ax = b**, where **A** is a symmetric positive-definite (SPD) matrix. The method uses optimal relaxation parameters derived from Chebyshev polynomial roots to accelerate convergence, requiring only estimates of the extreme eigenvalues of **A**.
 
