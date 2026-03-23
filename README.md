@@ -135,6 +135,16 @@ echo "4 1 0 1 3 1 0 1 2 5 5 3" | ./chebyshev -n 3 -lmin 1.268 -lmax 4.732
 
 Reads matrix A (row-major) and vector b from stdin. Flags: `-n`, `-lmin`, `-lmax`, `-eps`, `-maxiter`, `-ordering`.
 
+### Jupyter notebook
+
+An interactive [Python notebook](notebooks/chebyshev_iteration.ipynb) with visualizations of the method:
+- Chebyshev vs Richardson convergence comparison
+- Parameter ordering effects on numerical stability
+- Eigenvalue bound tightness impact
+- Chebyshev polynomial roots on the eigenvalue spectrum
+- Error polynomial minimax optimality
+- Convergence rate vs condition number
+
 ## Mathematical Background
 
 ### The iteration
