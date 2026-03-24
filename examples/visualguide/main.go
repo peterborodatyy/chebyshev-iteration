@@ -327,7 +327,7 @@ func section3() {
 func section4() {
 	header("4. Convergence Rate vs Condition Number")
 	fmt.Println("Theoretical convergence factor rho = (1-sqrt(xi))/(1+sqrt(xi)), xi=lmin/lmax")
-	fmt.Println("Iterations needed to reduce error by 1e-10\n")
+	fmt.Println("Iterations needed to reduce error by 1e-10")
 
 	fmt.Printf("%-12s  %12s  %12s\n", "kappa", "rho", "Iterations")
 	fmt.Println(strings.Repeat("-", 40))
