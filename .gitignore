@@ -16,6 +16,12 @@
 go.work
 go.work.sum
 
+# Notebook generated plots
+notebooks/*.png
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
 # IDE
 .idea/
 .vscode/
